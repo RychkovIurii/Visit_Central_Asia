@@ -1,28 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
-import heroImage from '../assets/hero-sign-in.jpg';
+import heroImage from '../assets/hero2.jpeg';
 import Login from '../components/Login';
+import Register from '../components/Register';
 import Footer from '../components/Footer';
-import { LanguageContext } from "../context/LanguageContext";
+import '../components/SignInStyles.css';
 
 
+function SignIn() {
+	const [isLogin, setIsLogin] = useState(true); // State to toggle forms
 
-function SignIn(){
-	const { t } = useContext(LanguageContext);
-	return(
+	const toggleForm = () => setIsLogin(!isLogin); // Toggle between login and registration
+
+	return (
 		<>
-			<Navbar/>
+			<Navbar />
 			<Hero
-			cName = "heroToGo"
-			heroImage = {heroImage}
-			title = {t("hero.heroPlacesToGoTitle")}
-			text = {t("hero.heroPlacesToGoText")}
+				cName="heroSignIn"
+				heroImage={heroImage}
 			/>
-			<Login/>
-			<Footer/>
+			{isLogin ? <Login onToggleForm={toggleForm} /> : <Register onToggleForm={toggleForm} />}
+			<Footer />
 		</>
-	)
+	);
 }
 
 export default SignIn;
