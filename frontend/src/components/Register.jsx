@@ -39,11 +39,11 @@ const Register = ({ onToggleForm }) => {
 			<h2 className="register-title">{t("register.title")}</h2>
 			<form className="register-form" onSubmit={handleSubmit}>
 				<div className="input-group">
-					<label>{t("register.usernameLabel")}</label>
+					<label>{t("register.nameLabel")}</label>
 					<input
 						type="text"
 						name="name"
-						placeholder={t("register.usernamePlaceholder")}
+						placeholder={t("register.namePlaceholder")}
 						value={formData.name}
 						onChange={handleChange}
 						required

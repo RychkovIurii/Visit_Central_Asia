@@ -91,8 +91,8 @@
 	},
 	"register": {
 		"title": "Register",
-		"usernameLabel": "Name",
-		"usernamePlaceholder": "Enter your name",
+		"nameLabel": "Name",
+		"namePlaceholder": "Enter your name",
 		"emailLabel": "Email",
 		"emailPlaceholder": "Enter your email",
 		"passwordLabel": "Password",
