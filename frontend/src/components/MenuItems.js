@@ -19,6 +19,11 @@ export const MenuItems = [
 		id: "practicalTips",
 		url: "/practical-tips",
 		cName: "nav-links"
+	},
+	{
+		id: "signIn",
+		url: "/sign-in",
+		cName: "nav-links"
 	}
 	/* {
 		title: "EN",

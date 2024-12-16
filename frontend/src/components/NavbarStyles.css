@@ -52,7 +52,7 @@
 
 .nav-menu {
 	display: grid;
-	grid-template-columns: repeat(6, auto);
+	grid-template-columns: repeat(7, auto);
 	grid-gap: 40px;
 	list-style: none;
 	align-items: center; 
@@ -60,8 +60,8 @@
 
 .nav-links {
 	text-decoration: none;
-	font-size: 1.2rem;
-	font-weight: 300;
+	font-size: 1.1rem;
+	font-weight: 200;
 	padding: 0.7rem 0.8rem;
 	white-space: nowrap;
 	color: #333;
@@ -91,6 +91,7 @@
 }
 
 .language select {
+	padding: 0.5em;
 	background-color: transparent;
 	font-weight: bold;
 	border: none;

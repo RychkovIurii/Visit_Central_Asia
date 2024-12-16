@@ -6,6 +6,7 @@ import Search from './routes/Search';
 import PracticalTips from './routes/PracticalTips';
 import PlacesToGo from './routes/PlacesToGo';
 import PlacesToStay from './routes/PlacesToStay';
+import SignIn from './routes/SignIn';
 import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/places-to-go' element={<PlacesToGo/>}/>
         <Route path='/things-to-do' element={<ThingsToDo/>}/>
         <Route path='/practical-tips' element={<PracticalTips/>}/>
+        <Route path='/sign-in' element={<SignIn/>}/>
         <Route path='/search' element={<Search/>}/>
       </Routes>
       </LanguageProvider>
