@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { LanguageContext } from "../context/LanguageContext";
 import "./CardStyles.css";
 import CardItems from './CardItems';
-import cardImage6 from '../assets/card6.jpeg';
-import cardImage5 from '../assets/card5.jpeg';
-import cardImage4 from '../assets/card4.jpeg';
-import cardImage3 from '../assets/card3.jpeg';
+import cardImage6 from '../assets/card6.jpg';
+import cardImage5 from '../assets/card5.jpg';
+import cardImage4 from '../assets/card4.jpg';
+import cardImage3 from '../assets/card3.jpg';
 import cardImage2 from '../assets/card2.jpg';
-import cardImage1 from '../assets/card1.jpeg';
+import cardImage1 from '../assets/card1.jpg';
 
 const Card = () => {
 	const { t } = useContext(LanguageContext);
