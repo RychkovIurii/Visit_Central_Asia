@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 import { LanguageContext } from '../context/LanguageContext';
 import './LoginStyles.css';
 
 const Login = ({ onToggleForm }) => {
 	const { t } = useContext(LanguageContext);
+	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		email: '',
 		password: ''
@@ -20,6 +22,7 @@ const Login = ({ onToggleForm }) => {
 			const response = await API.post('/users/login', formData);
 			alert(t("login.successMessage"));
 			localStorage.setItem('token', response.data.token);
+			navigate('/');
 		} catch (error) {
 			alert(t("login.errorMessage"));
 		}

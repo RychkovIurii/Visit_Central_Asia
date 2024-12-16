@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 import { LanguageContext } from '../context/LanguageContext';
 import './RegisterStyles.css';
 
 const Register = ({ onToggleForm }) => {
 	const { t } = useContext(LanguageContext); // Translation function
+	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		username: '',
 		email: '',
@@ -24,6 +26,8 @@ const Register = ({ onToggleForm }) => {
 			const response = await API.post('/users/register', formData);
 			alert(t("register.successMessage"));
 			console.log('Registration successful:', response.data);
+
+			navigate('/login');
 		} catch (error) {
 			alert(t("register.errorMessage"));
 			console.error('Error registering:', error);
@@ -38,9 +42,9 @@ const Register = ({ onToggleForm }) => {
 					<label>{t("register.usernameLabel")}</label>
 					<input
 						type="text"
-						name="username"
+						name="name"
 						placeholder={t("register.usernamePlaceholder")}
-						value={formData.username}
+						value={formData.name}
 						onChange={handleChange}
 						required
 					/>
