@@ -42,7 +42,13 @@ router.post('/login', async (req, res) => {
         }
 
         const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-        res.json({ token, admin: { id: admin._id, name: admin.name, email: admin.email } });
+        res.cookie('token', token, {
+            httpOnly: true,           // Prevent access by JavaScript
+            secure: process.env.NODE_ENV === 'production', // HTTPS only in production
+            sameSite: 'Strict',       // CSRF protection
+            maxAge: 1 * 60 * 60 * 1000 // 1 hour
+        });
+        res.json({ message: 'Admin login successful', admin: { id: admin._id, name: admin.name, email: admin.email } });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -51,6 +57,11 @@ router.post('/login', async (req, res) => {
 // Protected route: Manage users (dummy example)
 router.get('/manage-users', adminAuth, (req, res) => {
     res.json({ message: 'Admin access granted', admin: req.admin });
+});
+
+router.post('/logout', (req, res) => {
+    res.clearCookie('token', { httpOnly: true, sameSite: 'Strict' });
+    res.json({ message: 'Admin logged out successfully' });
 });
 
 module.exports = router;

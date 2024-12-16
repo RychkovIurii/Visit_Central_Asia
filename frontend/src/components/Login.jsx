@@ -21,7 +21,6 @@ const Login = ({ onToggleForm }) => {
 		try {
 			const response = await API.post('/users/login', formData);
 			alert(t("login.successMessage"));
-			localStorage.setItem('token', response.data.token);
 			navigate('/');
 		} catch (error) {
 			alert(t("login.errorMessage"));
