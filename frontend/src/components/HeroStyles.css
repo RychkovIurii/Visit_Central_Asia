@@ -11,6 +11,12 @@
 	position: relative;
 }
 
+.heroSignIn{
+	width: 100%;
+	height: 40vh;
+	position: relative
+}
+
 .heroToStay h1,
 .heroToStay p {
 	color: #333 !important;
