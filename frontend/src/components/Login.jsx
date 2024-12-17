@@ -5,6 +5,9 @@ import { LanguageContext } from '../context/LanguageContext';
 import { AuthContext } from '../context/AuthContext';
 import './LoginStyles.css';
 
+//Think about implenting mui alert
+//https://mui.com/components/alert/
+
 const Login = ({ onToggleForm }) => {
 	const { t } = useContext(LanguageContext);
 	const { login } = useContext(AuthContext); // Access the login function

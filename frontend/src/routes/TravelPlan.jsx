@@ -3,6 +3,13 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './TravelPlanStyles.css';
 
+
+// Think about implementetion Stepper MUI component for the travel plan
+// https://mui.com/components/steppers/
+// date picker for the date of the tour
+// Think about implenting mui alert
+// https://mui.com/components/alert/
+
 const TravelPlan = () => {
 	const [cart, setCart] = useState([]);
 
