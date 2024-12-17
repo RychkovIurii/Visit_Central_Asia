@@ -61,6 +61,11 @@ export default class Navbar extends Component {
 									</Link>
 								)}
 							</li>
+							<li>
+								<Link className="nav-links" to="/search">
+									<i className="fa-solid fa-magnifying-glass"></i>
+								</Link>
+							</li>
 							<li className='language'>
 								<i className="fa-solid fa-globe"></i>
 								<select value={language} onChange={(e) => updateLanguage(e.target.value)}>
