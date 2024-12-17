@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 // Register a new admin
-router.post('/register', async (req, res) => {
+router.post('/register', adminAuth, async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
