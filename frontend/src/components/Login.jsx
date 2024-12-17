@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 import { LanguageContext } from '../context/LanguageContext';
+import { AuthContext } from '../context/AuthContext';
 import './LoginStyles.css';
 
 const Login = ({ onToggleForm }) => {
 	const { t } = useContext(LanguageContext);
+	const { login } = useContext(AuthContext); // Access the login function
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		email: '',
@@ -19,8 +21,9 @@ const Login = ({ onToggleForm }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await API.post('/users/login', formData);
+			await API.post('/users/login', formData);
 			alert(t("login.successMessage"));
+			login(); // Update AuthContext state
 			navigate('/');
 		} catch (error) {
 			alert(t("login.errorMessage"));

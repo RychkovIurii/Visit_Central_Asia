@@ -4,7 +4,8 @@
 		"placeToGo": "Places to go",
 		"thingsToDo": "Things to do",
 		"practicalTips": "Practical tips",
-		"signIn": "SignIn"
+		"signIn": "SignIn",
+		"logout": "Logout"
 	},
 	"hero": {
 		"heroHomeTitle": "Your Journey Your Silk Road",

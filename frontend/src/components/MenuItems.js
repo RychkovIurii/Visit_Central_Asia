@@ -20,11 +20,13 @@ export const MenuItems = [
 		url: "/practical-tips",
 		cName: "nav-links"
 	},
-	{
+/* 	{
 		id: "signIn",
 		url: "/sign-in",
-		cName: "nav-links"
-	}
+		cName: "nav-links",
+		id2: "logout",
+		url2: "/logout",
+	} */
 	/* {
 		title: "EN",
 		url: "/",
