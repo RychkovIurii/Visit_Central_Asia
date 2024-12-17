@@ -22,6 +22,7 @@ function App() {
         <Route path='/practical-tips' element={<PracticalTips/>}/>
         <Route path='/sign-in' element={<SignIn/>}/>
         <Route path='/search' element={<Search/>}/>
+        <Route path='/logout' element={<Home/>}/>
       </Routes>
       </LanguageProvider>
     </div>

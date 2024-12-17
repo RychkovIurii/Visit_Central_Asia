@@ -5,17 +5,18 @@ import './FooterStyles.css';
 const Weather = () => {
 	const [weatherData, setWeatherData] = useState([]);
 	const { t } = useContext(LanguageContext);
+	const API_KEY = process.env.REACT_APP_WEATHER_API_KEY; // Access API key from .env
 
 	useEffect(() => {
 		const fetchWeatherData = async () => {
 			try {
-				const responseAlmaty = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Almaty&appid=875671f7e956f5f3866e2f09022f2a8b&units=metric');
+				const responseAlmaty = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Almaty&appid=${API_KEY}&units=metric`);
 				const dataAlmaty = await responseAlmaty.json();
 				
-				const responseTashkent = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Tashkent&appid=875671f7e956f5f3866e2f09022f2a8b&units=metric');
+				const responseTashkent = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Tashkent&appid=${API_KEY}&units=metric`);
 				const dataTashkent = await responseTashkent.json();
 				
-				const responseBishkek = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Bishkek&appid=875671f7e956f5f3866e2f09022f2a8b&units=metric');
+				const responseBishkek = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Bishkek&appid=${API_KEY}&units=metric`);
 				const dataBishkek = await responseBishkek.json();
 
 				setWeatherData([
@@ -29,7 +30,7 @@ const Weather = () => {
 		};
 
 		fetchWeatherData();
-	}, []);
+	}, [API_KEY]);
 
 	return (
 		<div className='weather'>
