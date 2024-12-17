@@ -82,8 +82,9 @@ router.delete('/tours/:id', adminAuth, async (req, res) => {
 });
 
 // Fetch upcoming tours by location (Public route)
-router.get('/tours', async (req, res) => {
+router.get('/', async (req, res) => {
 	const { language = 'en', location } = req.query;
+	console.log("Query Parameter - Location:", location);
 
 	try {
 		const filters = {
@@ -91,7 +92,11 @@ router.get('/tours', async (req, res) => {
 		};
 
 		if (location) {
-			filters.locationName = { $regex: location, $options: 'i' }; // Case-insensitive location search
+			filters['$or'] = [
+				{ 'translations.en.locationName': { $regex: location, $options: 'i' } }, // Match in locationName
+				{ 'translations.en.name': { $regex: location, $options: 'i' } },        // Match in name
+				{ 'translations.en.description': { $regex: location, $options: 'i' } } // Match in description
+			];
 		}
 
 		const tours = await Tour.find(filters).sort({ startDate: 1 }).limit(10); // Sort by earliest date and limit to 10 results
