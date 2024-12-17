@@ -7,6 +7,7 @@ import PracticalTips from './routes/PracticalTips';
 import PlacesToGo from './routes/PlacesToGo';
 import PlacesToStay from './routes/PlacesToStay';
 import SignIn from './routes/SignIn';
+import TravelPlan from './routes/TravelPlan';
 import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/sign-in' element={<SignIn/>}/>
         <Route path='/search' element={<Search/>}/>
         <Route path='/logout' element={<Home/>}/>
+        <Route path="/travel-plan" element={<TravelPlan />} />
       </Routes>
       </LanguageProvider>
     </div>

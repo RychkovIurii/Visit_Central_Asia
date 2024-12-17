@@ -20,7 +20,7 @@ function Home(){
 			text = {t("hero.heroHomeText")}
 			linkText = {t("hero.heroHomeLinkText")}
 			linkClass = "show"
-			url = "/"
+			url = "/travel-plan"
 			/>
 			<Destination/>
 			<Card/>
