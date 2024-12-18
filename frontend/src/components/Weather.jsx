@@ -20,9 +20,10 @@ const Weather = () => {
 				const dataBishkek = await responseBishkek.json();
 
 				setWeatherData([
-					{ city: 'Almaty', temperature: dataAlmaty.main.temp },
-					{ city: 'Tashkent', temperature: dataTashkent.main.temp },
-					{ city: 'Bishkek', temperature: dataBishkek.main.temp }
+					{ city: 'Almaty', temperature: Math.round(dataAlmaty.main.temp) },
+					{ city: 'Bishkek', temperature: Math.round(dataBishkek.main.temp) },
+					{ city: 'Tashkent', temperature: Math.round(dataTashkent.main.temp) }
+					
 				]);
 			} catch (error) {
 				console.error('Error loading weather data:', error);
