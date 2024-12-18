@@ -3,7 +3,9 @@
 		"placeToStay": "Dove alloggiare",
 		"placeToGo": "Luoghi da visitare",
 		"thingsToDo": "Cose da fare",
-		"practicalTips": "Consigli pratici"
+		"practicalTips": "Consigli pratici",
+		"signIn": "Accedi",
+		"logout": "Disconnetti"
 	},
 	"hero": {
 		"heroHomeTitle": "Il tuo viaggio, la tua Via della Seta",
@@ -75,5 +77,39 @@
 		"license": "Licenza",
 		"terms": "Termini di uso",
 		"weather": "Meteo nelle città:"
+	},
+	"login": {
+		"title": "Accedi",
+		"emailLabel": "Email",
+		"emailPlaceholder": "Inserisci la tua email",
+		"passwordLabel": "Password",
+		"passwordPlaceholder": "Inserisci la tua password",
+		"submitButton": "Accedi",
+		"registerButton": "Crea un nuovo account",
+		"forgotPassword": "Hai dimenticato la password?",
+		"successMessage": "Accesso riuscito!",
+		"errorMessage": "Accesso fallito. Per favore, riprova."
+	},
+	"register": {
+		"title": "Registrati",
+		"nameLabel": "Nome",
+		"namePlaceholder": "Inserisci il tuo nome",
+		"emailLabel": "Email",
+		"emailPlaceholder": "Inserisci la tua email",
+		"passwordLabel": "Password",
+		"passwordPlaceholder": "Inserisci la tua password",
+		"submitButton": "Registrati",
+		"loginButton": "Hai già un account? Accedi",
+		"successMessage": "Registrazione riuscita!",
+		"errorMessage": "Registrazione fallita. Per favore, riprova."
+	},
+	"search": {
+		"submitButton": "Cerca",
+		"searchPlaceholder": "Cerca i tour per località...",
+		"noFoundMessage": "Nessun tour in programma trovato per questa località.",
+		"location": "Località",
+		"startDate": "Data di inizio",
+		"endDate": "Data di fine",
+		"price": "Prezzo"
 	}
 }

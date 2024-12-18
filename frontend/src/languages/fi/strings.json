@@ -3,7 +3,9 @@
 		"placeToStay": "Majoitus",
 		"placeToGo": "Nähtävyydet",
 		"thingsToDo": "Elämykset",
-		"practicalTips": "Käytännön vinkkejä"
+		"practicalTips": "Käytännön vinkkejä",
+		"signIn": "Kirjaudu sisään",
+		"logout": "Kirjaudu ulos"
 	},
 	"hero": {
 		"heroHomeTitle": "Sinun matkasi, Sinun Silkkitiesi",
@@ -75,5 +77,39 @@
 		"license": "Lisenssi",
 		"terms": "Käyttöehdot",
 		"weather": "Säätiedot kaupungeissa:"
+	},
+	"login": {
+		"title": "Kirjaudu sisään",
+		"emailLabel": "Sähköposti",
+		"emailPlaceholder": "Syötä sähköpostiosoitteesi",
+		"passwordLabel": "Salasana",
+		"passwordPlaceholder": "Syötä salasanasi",
+		"submitButton": "Kirjaudu sisään",
+		"registerButton": "Luo uusi tili",
+		"forgotPassword": "Unohditko salasanasi?",
+		"successMessage": "Sisäänkirjautuminen onnistui!",
+		"errorMessage": "Sisäänkirjautuminen epäonnistui. Yritä uudelleen."
+	},
+	"register": {
+		"title": "Rekisteröidy",
+		"nameLabel": "Nimi",
+		"namePlaceholder": "Syötä nimesi",
+		"emailLabel": "Sähköposti",
+		"emailPlaceholder": "Syötä sähköpostiosoitteesi",
+		"passwordLabel": "Salasana",
+		"passwordPlaceholder": "Syötä salasanasi",
+		"submitButton": "Rekisteröidy",
+		"loginButton": "Onko sinulla jo tili? Kirjaudu sisään",
+		"successMessage": "Rekisteröinti onnistui!",
+		"errorMessage": "Rekisteröinti epäonnistui. Yritä uudelleen."
+	},
+	"search": {
+		"submitButton": "Hae",
+		"searchPlaceholder": "Hae kiertoajelut sijainnin mukaan...",
+		"noFoundMessage": "Ei tulevia kiertoajeluja tälle sijainnille.",
+		"location": "Sijainti",
+		"startDate": "Alkamispäivämäärä",
+		"endDate": "Päättymispäivämäärä",
+		"price": "Hinta"
 	}
 }

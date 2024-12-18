@@ -102,5 +102,14 @@
 		"loginButton": "Already have an account? Login",
 		"successMessage": "Registration successful!",
 		"errorMessage": "Registration failed. Please try again."
+	},
+	"search": {
+		"submitButton": "Search",
+		"searchPlaceholder": "Search tours by location...",
+		"noFoundMessage": "No upcoming tours found for this location.",
+		"location": "Location",
+		"startDate": "Start Date",
+		"endDate": "End Date",
+		"price": "Price"
 	}
 }

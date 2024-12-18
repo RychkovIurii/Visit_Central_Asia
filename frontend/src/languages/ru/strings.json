@@ -3,7 +3,9 @@
 		"placeToStay": "Где остановиться",
 		"placeToGo": "Куда поехать",
 		"thingsToDo": "Чем заняться",
-		"practicalTips": "Практические советы"
+		"practicalTips": "Практические советы",
+		"signIn": "Войти",
+		"logout": "Выйти"
 	},
 	"hero": {
 		"heroHomeTitle": "Ваше путешествие по Великому Шелковому пути",
@@ -75,5 +77,39 @@
 		"license": "Лицензия",
 		"terms": "Условия использования",
 		"weather": "Погода в городах:"
+	},
+	"login": {
+		"title": "Войти",
+		"emailLabel": "Электронная почта",
+		"emailPlaceholder": "Введите ваш email",
+		"passwordLabel": "Пароль",
+		"passwordPlaceholder": "Введите ваш пароль",
+		"submitButton": "Войти",
+		"registerButton": "Создать новый аккаунт",
+		"forgotPassword": "Забыли пароль?",
+		"successMessage": "Успешный вход!",
+		"errorMessage": "Не удалось войти. Пожалуйста, попробуйте снова."
+	},
+	"register": {
+		"title": "Регистрация",
+		"nameLabel": "Имя",
+		"namePlaceholder": "Введите ваше имя",
+		"emailLabel": "Электронная почта",
+		"emailPlaceholder": "Введите ваш email",
+		"passwordLabel": "Пароль",
+		"passwordPlaceholder": "Введите ваш пароль",
+		"submitButton": "Зарегистрироваться",
+		"loginButton": "Уже есть аккаунт? Войти",
+		"successMessage": "Регистрация прошла успешно!",
+		"errorMessage": "Регистрация не удалась. Пожалуйста, попробуйте снова."
+	},
+	"search": {
+		"submitButton": "Поиск",
+		"searchPlaceholder": "Ищите туры по местоположению...",
+		"noFoundMessage": "Для этой локации не найдено предстоящих туров.",
+		"location": "Местоположение",
+		"startDate": "Дата начала",
+		"endDate": "Дата окончания",
+		"price": "Цена"
 	}
 }
