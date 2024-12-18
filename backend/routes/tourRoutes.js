@@ -92,11 +92,12 @@ router.get('/', async (req, res) => {
 		};
 
 		if (location) {
-			filters['$or'] = [
-				{ 'translations.en.locationName': { $regex: location, $options: 'i' } }, // Match in locationName
-				{ 'translations.en.name': { $regex: location, $options: 'i' } },        // Match in name
-				{ 'translations.en.description': { $regex: location, $options: 'i' } } // Match in description
-			];
+			const languages = ['en', 'ru', 'it', 'fi'];
+			filters['$or'] = languages.flatMap(lang => [
+				{ [`translations.${lang}.locationName`]: { $regex: location, $options: 'i' } },
+				{ [`translations.${lang}.name`]: { $regex: location, $options: 'i' } },
+				{ [`translations.${lang}.description`]: { $regex: location, $options: 'i' } }
+			]);
 		}
 
 		const tours = await Tour.find(filters).sort({ startDate: 1 }).limit(10); // Sort by earliest date and limit to 10 results
