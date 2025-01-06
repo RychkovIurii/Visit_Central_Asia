@@ -3,10 +3,11 @@ import { LanguageContext } from "../context/LanguageContext";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
-import heroImage from '../assets/hero2.jpeg';
+/* import heroImage from '../assets/hero2.jpeg'; */
 import './SearchStyles.css';
 
 const Search = () => {
+	const heroImage = "https://res.cloudinary.com/dilugzsoa/image/upload/tours/heroSearch.jpg";
 	const { t } = useContext(LanguageContext);
 	const [query, setQuery] = useState('');
 	const [results, setResults] = useState([]);
