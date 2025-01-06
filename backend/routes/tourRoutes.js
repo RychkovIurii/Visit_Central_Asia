@@ -81,6 +81,18 @@ router.delete('/tours/:id', adminAuth, async (req, res) => {
 	}
 });
 
+// Fetch all upcoming tours (Public route)
+router.get('/upcoming', async (req, res) => {
+	try {
+		const tours = await Tour.find({ startDate: { $gte: new Date() } })
+			.sort({ startDate: 1 }); // Sort by earliest date
+		res.status(200).json(tours);
+	} catch (error) {
+		console.error('Error:', error);
+		res.status(500).json({ message: 'Error', error: error.message });
+	}
+});
+
 // Fetch upcoming tours by location (Public route)
 router.get('/', async (req, res) => {
 	const { language = 'en', location } = req.query;

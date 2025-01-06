@@ -74,7 +74,7 @@ const seedTours = async () => {
 			startDate: new Date('2025-07-15'),
 			endDate: new Date('2025-07-20'),
 			availableSpots: 20,
-			images: ['/images/almaty1.jpg', '/images/almaty2.jpg'],
+			images: ['/tours/almaty1.jpg', '/tours/almaty2.jpg'],
 		},
         {
             translations: {
@@ -104,7 +104,7 @@ const seedTours = async () => {
             startDate: new Date("2025-08-01"),
             endDate: new Date("2025-08-07"),
             availableSpots: 15,
-            images: ["/images/ala-kul1.jpg", "/images/ala-kul2.jpg"]
+            images: ["/tours/ala-kul1.jpg", "/tours/ala-kul2.jpg"]
         },
         {
             translations: {
@@ -164,7 +164,7 @@ const seedTours = async () => {
             startDate: new Date("2025-06-20"),
             endDate: new Date("2025-06-25"),
             availableSpots: 20,
-            images: ["/images/grigoriev1.jpg", "/images/grigoriev2.jpg"]
+            images: ["/tours/grigoriev1.jpg", "/tours/grigoriev2.jpg"]
         },
 		{
             translations: {
@@ -194,7 +194,7 @@ const seedTours = async () => {
             startDate: new Date("2025-09-08"),
             endDate: new Date("2025-09-14"),
             availableSpots: 30,
-            images: ["/images/nomadgames1.jpg", "/images/nomadgames2.jpg"]
+            images: ["/tours/nomadgames1.jpg", "/tours/nomadgames2.jpg"]
         },
 		{
             translations: {
@@ -224,7 +224,7 @@ const seedTours = async () => {
             startDate: new Date("2025-06-15"),
             endDate: new Date("2025-06-18"),
             availableSpots: 25,
-            images: ["/images/furmanov1.jpg", "/images/furmanov2.jpg"]
+            images: ["/tours/furmanov1.jpg", "/tours/furmanov2.jpg"]
         },
         {
             translations: {
@@ -254,7 +254,7 @@ const seedTours = async () => {
             startDate: new Date("2025-08-05"),
             endDate: new Date("2025-08-10"),
             availableSpots: 20,
-            images: ["/images/kolsay1.jpg", "/images/kolsay2.jpg"]
+            images: ["/tours/kolsay1.jpg", "/tours/kolsay2.jpg"]
         },
 		{
             translations: {
@@ -284,7 +284,7 @@ const seedTours = async () => {
             startDate: new Date("2025-10-01"),
             endDate: new Date("2025-10-05"),
             availableSpots: 18,
-            images: ["/images/turkestan1.jpg", "/images/turkestan2.jpg"]
+            images: ["/tours/turkestan1.jpg", "/tours/turkestan2.jpg"]
         }
     ];
 	await Tour.insertMany(tours);
