@@ -134,7 +134,7 @@ const seedTours = async () => {
             startDate: new Date("2025-09-10"),
             endDate: new Date("2025-09-25"),
             availableSpots: 10,
-            images: ["/images/silkroad1.jpg", "/images/silkroad2.jpg"]
+            images: ["/tours/silk-road-exploration1", "/tours/silk-road-exploration2"]
         },
         {
             translations: {

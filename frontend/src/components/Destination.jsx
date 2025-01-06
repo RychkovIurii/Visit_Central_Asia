@@ -2,15 +2,21 @@ import React, { useContext } from 'react';
 import { LanguageContext } from "../context/LanguageContext";
 import "./DestinationStyles.css";
 import DestinationItems from './DestinationItems';
-import destImage6 from '../assets/dest6.jpeg';
-import destImage5 from '../assets/dest5.jpeg';
-import destImage4 from '../assets/dest4.jpeg';
-import destImage3 from '../assets/dest3.jpeg';
-import destImage1 from '../assets/dest2.jpeg';
-import destImage2 from '../assets/dest1.jpeg';
+//import destImage6 from '../assets/dest6.jpeg';
+//import destImage5 from '../assets/dest5.jpeg';
+//import destImage4 from '../assets/dest4.jpeg';
+//import destImage3 from '../assets/dest3.jpeg';
+//import destImage1 from '../assets/dest2.jpeg';
+//import destImage2 from '../assets/dest1.jpeg';
 
 const Destination = () => {
 	const { t } = useContext(LanguageContext);
+	const destImage5 = "https://res.cloudinary.com/dilugzsoa/image/upload/tours/silk-road-exploration2.jpg";
+	const destImage6 = "https://res.cloudinary.com/dilugzsoa/image/upload/tours/silk-road-exploration.jpg";
+	const destImage3 = "https://res.cloudinary.com/dilugzsoa/image/upload/tours/ala-kul1.jpg";
+	const destImage4 = "https://res.cloudinary.com/dilugzsoa/image/upload/tours/ala-kul2.jpg";
+	const destImage1 = "https://res.cloudinary.com/dilugzsoa/image/upload/tours/almaty1.jpg";
+	const destImage2 = "https://res.cloudinary.com/dilugzsoa/image/upload/tours/almaty2.jpg";
 	return(
 		<div className="destination">
 			<h1>{t("destination.destH1")}</h1>
