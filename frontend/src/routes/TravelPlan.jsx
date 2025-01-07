@@ -6,6 +6,10 @@ import Navbar from '../components/Navbar';
 import CardItems from '../components/CardItems';
 import Footer from '../components/Footer';
 import './TravelPlanStyles.css';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import Button from '@mui/material/Button';
 
 
 // Think about implementetion Stepper MUI component for the travel plan
@@ -14,11 +18,15 @@ import './TravelPlanStyles.css';
 // Think about implenting mui alert
 // https://mui.com/components/alert/
 
+const steps = ['Select Tours', 'Review Cart', 'Confirm Booking'];
+
+
 const TravelPlan = () => {
 	const heroImage = "https://res.cloudinary.com/dilugzsoa/image/upload/v1735299197/tours/heroSearch.jpg";
 	const { t, language } = useContext(LanguageContext);
 	const [tours, setTours] = useState([]);
 	const [cart, setCart] = useState([]);
+	const [activeStep, setActiveStep] = useState(0);
 
 	// Fetch tours from the backend
 	useEffect(() => {
@@ -48,31 +56,56 @@ const TravelPlan = () => {
 		setCart(cart.filter((item) => item._id !== id));
 	}
 
+	const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleReset = () => {
+        setActiveStep(0);
+    };
+
 	return (
 		<>
 			<Navbar />
 			<Hero cName="heroSignIn" heroImage={heroImage} />
 			<div className="travel-plan-container">
 				<h1>Choose Your Journey</h1>
-				<div className="tour-list">
-					{tours.map((tour) => (
-						<div key={tour._id} className="tour-item">
-							<CardItems
-								title={tour.translations[language]?.name || tour.translations.en.name}
-								text={tour.translations[language]?.description || tour.translations.en.description}
-								img={`https://res.cloudinary.com/dilugzsoa/image/upload${tour.images[0]}`}
-							>
-								<div className="additional-info">
-									<p><strong>Price:</strong> ${tour.price}</p>
-									<p>
-										<strong>Dates:</strong> {new Date(tour.startDate).toLocaleDateString()} - {new Date(tour.endDate).toLocaleDateString()}
-									</p>
-								</div>
-								<button onClick={() => addToCart(tour)}>{t("travelPlan.addToPlan", "Add to Plan")}</button>
-							</CardItems>
-						</div>
-					))}
-				</div>
+				<Stepper activeStep={activeStep} sx={{ margin: '4rem' }}>
+                    {steps.map((label, index) => (
+                        <Step key={label}>
+                            <StepLabel>{label}</StepLabel>
+                        </Step>
+                    ))}
+                </Stepper>
+                {activeStep === 0 && (
+				<>
+					
+					<div className="tour-list">
+						{tours.map((tour) => (
+							<div key={tour._id} className="tour-item">
+								<CardItems
+									title={tour.translations[language]?.name || tour.translations.en.name}
+									text={tour.translations[language]?.description || tour.translations.en.description}
+									img={`https://res.cloudinary.com/dilugzsoa/image/upload${tour.images[0]}`}
+								>
+									<div className="additional-info">
+										<p><strong>Price:</strong> ${tour.price}</p>
+										<p>
+											<strong>Dates:</strong> {new Date(tour.startDate).toLocaleDateString()} - {new Date(tour.endDate).toLocaleDateString()}
+										</p>
+									</div>
+									<button onClick={() => addToCart(tour)}>{t("travelPlan.addToPlan", "Add to Plan")}</button>
+								</CardItems>
+							</div>
+						))}
+					</div>
+				</>
+				)}
+                {activeStep === 1 && (
 				<div className="cart-section">
 					<h2>Selected Tours</h2>
 					{cart.length > 0 ? (
@@ -88,6 +121,21 @@ const TravelPlan = () => {
 					) : (
 						<p>No tours added yet.</p>
 					)}
+				</div>
+			)}
+			{activeStep === 2 && (
+				<div className="confirmation">
+					<h2>{t("travelPlan.confirmationTitle", "Confirm Your Booking")}</h2>
+					<p>{t("travelPlan.confirmationMessage", "Your travel plan is ready. Please confirm to proceed.")}</p>
+				</div>
+			)}
+			<div className="stepper-buttons">
+					<Button disabled={activeStep === 0} onClick={handleBack}>
+						Back
+					</Button>
+					<Button variant="contained" onClick={activeStep === steps.length - 1 ? handleReset : handleNext}>
+						{activeStep === steps.length - 1 ? 'Reset' : 'Next'}
+					</Button>
 				</div>
 			</div>
 			<Footer />
