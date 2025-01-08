@@ -93,11 +93,7 @@ const TravelPlan = () => {
 				<Stepper activeStep={activeStep} sx={{ margin: '4rem' }}>
 					{steps.map((label, index) => {
 						// Define labelProps
-						const labelProps: {
-							optional?: React.ReactNode;
-							error?: boolean;
-						} = {};
-
+						const labelProps = {};
 						// Check if the step should show an error
 						if (isStepFailed(index)) {
 							labelProps.optional = (

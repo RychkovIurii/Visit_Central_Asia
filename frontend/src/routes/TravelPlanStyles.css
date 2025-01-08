@@ -28,7 +28,7 @@
 	justify-content: space-between;
     width: 100%;
     text-align: start;
-    cursor: pointer;
+    cursor: default;
     padding: 1rem;
 	box-shadow: none;
     border-radius: none;
