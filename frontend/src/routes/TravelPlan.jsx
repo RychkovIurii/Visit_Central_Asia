@@ -10,6 +10,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 
 // Think about implementetion Stepper MUI component for the travel plan
@@ -56,7 +57,15 @@ const TravelPlan = () => {
 		setCart(cart.filter((item) => item._id !== id));
 	}
 
-	const handleNext = () => {
+	const isStepFailed = (step) => {
+		return step === 1 && cart.length === 0; // If cart is empty, mark step 1 as failed
+	};
+
+    const handleNext = () => {
+        if ((activeStep === 1 && cart.length === 0) || (activeStep === 2 && cart.length === 0)) {
+            alert(t("travelPlan.cartEmptyError", "Your cart is empty! Add tours before proceeding."));
+            return; // Prevent moving to the next step if cart is empty
+        }
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
@@ -74,13 +83,38 @@ const TravelPlan = () => {
 			<Hero cName="heroSignIn" heroImage={heroImage} />
 			<div className="travel-plan-container">
 				<h1>Choose Your Journey</h1>
-				<Stepper activeStep={activeStep} sx={{ margin: '4rem' }}>
+				{/* <Stepper activeStep={activeStep} sx={{ margin: '4rem' }}>
                     {steps.map((label, index) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
                         </Step>
                     ))}
-                </Stepper>
+                </Stepper> */}
+				<Stepper activeStep={activeStep} sx={{ margin: '4rem' }}>
+					{steps.map((label, index) => {
+						// Define labelProps
+						const labelProps: {
+							optional?: React.ReactNode;
+							error?: boolean;
+						} = {};
+
+						// Check if the step should show an error
+						if (isStepFailed(index)) {
+							labelProps.optional = (
+								<Typography variant="caption" color="error">
+									Cart is empty
+								</Typography>
+							);
+							labelProps.error = true;
+						}
+
+						return (
+							<Step key={label}>
+								<StepLabel {...labelProps}>{label}</StepLabel>
+							</Step>
+						);
+					})}
+				</Stepper>
                 {activeStep === 0 && (
 				<>
 					
