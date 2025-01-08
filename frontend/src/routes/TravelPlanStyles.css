@@ -95,6 +95,58 @@ button:active {
     transform: translateY(1px); /* Push button down slightly */
 }
 
+.cart-icon-container {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.cart-icon {
+    position: relative;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.cart-icon:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.cart-icon:active {
+    background-color: #003f7f;
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+.cart-count {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
 /* Responsive Adjustments for Cards */
 @media screen and (max-width: 700px) {
     .card {

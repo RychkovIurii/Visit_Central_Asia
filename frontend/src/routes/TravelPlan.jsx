@@ -129,6 +129,13 @@ const TravelPlan = () => {
 					<p>{t("travelPlan.confirmationMessage", "Your travel plan is ready. Please confirm to proceed.")}</p>
 				</div>
 			)}
+			{/* Static Cart Icon */}
+            <div className="cart-icon-container">
+                <button className="cart-icon" onClick={() => setActiveStep(1)}>
+                    🛒
+                    {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+                </button>
+            </div>
 			<div className="stepper-buttons">
 					<Button disabled={activeStep === 0} onClick={handleBack}>
 						Back
