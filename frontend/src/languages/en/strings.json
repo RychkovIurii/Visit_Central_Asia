@@ -111,5 +111,12 @@
 		"startDate": "Start Date",
 		"endDate": "End Date",
 		"price": "Price"
+	},
+	"travelPlan": {
+		"cartEmptyError": "Your cart is empty. Please add tours to your cart before proceeding.",
+		"addToPlan": "Add to Plan",
+		"remove": "Remove",
+		"confirmationTitle": "Confirm Your Booking",
+		"confirmationMessage": "Your travel plan is ready. Please confirm to proceed."
 	}
 }
