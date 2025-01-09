@@ -4,6 +4,7 @@ import { LanguageContext } from "../context/LanguageContext";
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import CardItems from '../components/CardItems';
+import BookingConfirmation from '../components/BookingConfirmation';
 import Footer from '../components/Footer';
 import './TravelPlanStyles.css';
 import Stepper from '@mui/material/Stepper';
@@ -19,7 +20,7 @@ import Typography from '@mui/material/Typography';
 // Think about implenting mui alert
 // https://mui.com/components/alert/
 
-const steps = ['Select Tours', 'Review Cart', 'Confirm Booking'];
+const steps = ['Select Tours', 'Review Cart', 'Confirm Booking', 'Payment'];
 
 
 const TravelPlan = () => {
@@ -28,6 +29,7 @@ const TravelPlan = () => {
 	const [tours, setTours] = useState([]);
 	const [cart, setCart] = useState([]);
 	const [activeStep, setActiveStep] = useState(0);
+	const [userData, setUserData] = useState(null);
 
 	// Fetch tours from the backend
 	useEffect(() => {
@@ -73,9 +75,14 @@ const TravelPlan = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-    const handleReset = () => {
-        setActiveStep(0);
-    };
+	const handleReset = () => {
+		setActiveStep(0);
+	};
+
+	const handleBookingConfirm = (data) => {
+		setUserData(data); // Save user data
+		handleNext(); // Navigate to the Payment step
+	};
 
 	return (
 		<>
@@ -157,6 +164,14 @@ const TravelPlan = () => {
 				<div className="confirmation">
 					<h2>{t("travelPlan.confirmationTitle", "Confirm Your Booking")}</h2>
 					<p>{t("travelPlan.confirmationMessage", "Your travel plan is ready. Please confirm to proceed.")}</p>
+					<BookingConfirmation onConfirm={handleBookingConfirm} />
+				</div>
+			)}
+			{activeStep === 3 && (
+				<div>
+					<Typography variant="h5">Payment</Typography>
+					<p>Proceed to integrate a payment system like Stripe here.</p>
+					{/* Payment Integration Goes Here */}
 				</div>
 			)}
 			{/* Static Cart Icon */}
@@ -170,7 +185,7 @@ const TravelPlan = () => {
 					<Button disabled={activeStep === 0} onClick={handleBack}>
 						Back
 					</Button>
-					<Button variant="contained" onClick={activeStep === steps.length - 1 ? handleReset : handleNext}>
+					<Button variant="contained" onClick={handleNext} disabled={activeStep === 2}>
 						{activeStep === steps.length - 1 ? 'Reset' : 'Next'}
 					</Button>
 				</div>
