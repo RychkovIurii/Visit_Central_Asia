@@ -6,6 +6,7 @@ const PaymentSchema = new mongoose.Schema({
 	amount: { type: Number, required: true },
 	paymentMethod: { type: String, required: true },
 	status: { type: String, enum: ['pending', 'completed', 'failed'], default: 'pending' },
+	stripePaymentIntentId: { type: String, required: true },
 	createdAt: { type: Date, default: Date.now }
 });
 

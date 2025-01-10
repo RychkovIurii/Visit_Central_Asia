@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import CardItems from '../components/CardItems';
 import BookingConfirmation from '../components/BookingConfirmation';
+import Payment from '../components/Payment';
 import Footer from '../components/Footer';
 import './TravelPlanStyles.css';
 import Stepper from '@mui/material/Stepper';
@@ -170,7 +171,7 @@ const TravelPlan = () => {
 			{activeStep === 3 && (
 				<div>
 					<Typography variant="h5">Payment</Typography>
-					<p>Proceed to integrate a payment system like Stripe here.</p>
+					<Payment userData={userData} cart={cart} />
 					{/* Payment Integration Goes Here */}
 				</div>
 			)}
