@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
         res.cookie('token', token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'Strict',
+            sameSite: 'Strict', /* None for render */
             maxAge: 1 * 60 * 60 * 1000 // 1 hour
         });
         res.json({ message: 'User login successful', user: { id: user._id, name: user.name, email: user.email, role: user.role } });
